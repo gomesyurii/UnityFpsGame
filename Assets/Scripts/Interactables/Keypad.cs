@@ -5,6 +5,8 @@ using UnityEngine;
 public class Keypad : Interactable
 {
    
+    [SerializeField]private GameObject door;
+    private bool isOpen = false;
     void Start()
     {
         
@@ -18,8 +20,10 @@ public class Keypad : Interactable
 
     protected override void Interact()
     {
+        isOpen = !isOpen;
         base.Interact();
-        Debug.Log("Interacting with" + gameObject.name);
+        door.GetComponent<Animator>().SetBool("isOpen", isOpen);
+        
     }
 
 }
