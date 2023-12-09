@@ -10,7 +10,7 @@ public class CubeColor : Interactable
 
     void Start()
     {
-
+        
     }
 
 
